@@ -1,0 +1,11 @@
+g++ -shared -fPIC -o triangle.so triangle.cpp
+
+g++ -shared -fPIC -o libsecond.so second.cpp
+
+g++ -shared -L. -lsecond -fPIC -o libtriangle.so triangle.cpp
+
+g++ main.cpp -ldl
+
+g++ main.cpp -L. -ltriangle -lsecond
+
+
